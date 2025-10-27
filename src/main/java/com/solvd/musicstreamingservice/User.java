@@ -11,6 +11,8 @@ public class User {
     private LocalDate createdDate;
     private LocalDateTime createdDateTime;
     private List<Playlist> playlists;
+    private StreamingSession streamingSession;
+    private SubscriptionPlan subscriptionPlan;
 
     public User(String username, String email) {
         this.username = username;
@@ -50,5 +52,29 @@ public class User {
 
     public void addPlaylist(Playlist playlist) {
         playlists.add(playlist);
+    }
+
+    public StreamingSession getStreamingSession() {
+        return streamingSession;
+    }
+
+    public void setStreamingSession(StreamingSession streamingSession) {
+        this.streamingSession = streamingSession;
+    }
+
+    public SubscriptionPlan getSubscriptionPlan() {
+        return subscriptionPlan;
+    }
+
+    public void setSubscriptionPlan(SubscriptionPlan subscriptionPlan) {
+        this.subscriptionPlan = subscriptionPlan;
+    }
+
+    public void setCreatedDate(LocalDate localDate) {
+        this.createdDate = localDate;
+    }
+
+    public void setCreatedDateTime(LocalDateTime createdDateTime) {
+        this.createdDateTime = createdDateTime;
     }
 }
