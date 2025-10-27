@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<musicstreamingservice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                       xsi:noNamespaceSchemaLocation="music_streaming_data.xsd">
+    <user>
+        <username>john_doe</username>
+        <email>john.doe@example.com</email>
+        <createdDate>2024-01-15</createdDate>
+        <createdDateTime>2024-01-15T10:30:00</createdDateTime>
+        
+        <playlist>
+            <name>My Favorites</name>
+            <playlistitem>
+                <song>
+                    <title>Anti-Hero</title>
+                    <artist>Taylor Swift</artist>
+                    <album>Midnights</album>
+                </song>
+                <position>1</position>
+            </playlistitem>
+            <playlistitem>
+                <song>
+                    <title>Take My Breath</title>
+                    <artist>The Weeknd</artist>
+                    <album>Dawn FM</album>
+                </song>
+                <position>2</position>
+            </playlistitem>
+        </playlist>
+        
+        <playlist>
+            <name>Workout Mix</name>
+            <playlistitem>
+                <song>
+                    <title>Gasoline</title>
+                    <artist>The Weeknd</artist>
+                    <album>Dawn FM</album>
+                </song>
+                <position>1</position>
+            </playlistitem>
+        </playlist>
+
+        <streamingsession>
+            <currentSong>
+                <title>Lavender Haze</title>
+                <artist>Taylor Swift</artist>
+                <album>Midnights</album>
+            </currentSong>
+            <playedSong>Anti-Hero</playedSong>
+            <playedSong>Take My Breath</playedSong>
+        </streamingsession>
+
+        <subscriptionplan>
+            <name>Premium</name>
+            <price>9.99</price>
+        </subscriptionplan>
+    </user>
+</musicstreamingservice>

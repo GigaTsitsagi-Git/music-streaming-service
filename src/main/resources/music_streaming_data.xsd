@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           elementFormDefault="qualified">
+
+    <xs:element name="musicstreamingservice">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user" type="UserType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="UserType">
+        <xs:sequence>
+            <xs:element name="username" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="createdDate" type="xs:date"/>
+            <xs:element name="createdDateTime" type="xs:dateTime"/>
+            <xs:element name="playlist" type="PlaylistType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="streamingsession" type="StreamingSessionType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="subscriptionplan" type="SubscriptionPlanType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="PlaylistType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="playlistitem" type="PlaylistItemType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="PlaylistItemType">
+        <xs:sequence>
+            <xs:element name="song" type="SongType"/>
+            <xs:element name="position" type="xs:positiveInteger"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SongType">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="artist" type="xs:string"/>
+            <xs:element name="album" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="StreamingSessionType">
+        <xs:sequence>
+            <xs:element name="currentSong" type="SongType"/>
+            <xs:element name="playedSong" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SubscriptionPlanType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="price" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
+

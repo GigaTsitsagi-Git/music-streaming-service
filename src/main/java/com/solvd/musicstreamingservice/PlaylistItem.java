@@ -2,12 +2,12 @@ package com.solvd.musicstreamingservice;
 
 public class PlaylistItem {
     private Song song;
-    private String name;
+    private String playlistName;
     private int position;
 
     public PlaylistItem(Song song, String playlistName, int position) {
         this.song = song;
-        this.name = playlistName;
+        this.playlistName = playlistName;
         this.position = position;
     }
 
@@ -20,11 +20,11 @@ public class PlaylistItem {
     }
 
     public String getName() {
-        return name;
+        return playlistName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.playlistName = name;
     }
 
     public int getPosition() {
@@ -33,5 +33,9 @@ public class PlaylistItem {
 
     public void setPosition(int position) {
         this.position = position;
+    }
+
+    public void setPlaylistName(String playlistName) {
+        this.playlistName = playlistName;
     }
 }
