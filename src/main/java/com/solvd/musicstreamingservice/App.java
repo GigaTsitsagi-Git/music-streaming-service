@@ -1,5 +1,8 @@
 package com.solvd.musicstreamingservice;
 
+import com.jayway.jsonpath.JsonPath;
+import java.io.InputStream;
+
 public class App 
 {
     public static void main( String[] args )
@@ -41,6 +44,34 @@ public class App
             
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        try {
+            System.out.println("\nParsing JSONPath queries...\n");
+            InputStream is = App.class.getClassLoader().getResourceAsStream("music_streaming_data.json");
+            if (is == null) {
+                throw new RuntimeException("JSON file not found in resources!");
+            }
+
+            String username = JsonPath.parse(is).read("$.username", String.class);
+            // Reopen stream for subsequent reads
+            is = App.class.getClassLoader().getResourceAsStream("music_streaming_data.json");
+            String firstPlaylist = JsonPath.parse(is).read("$.playlists[0].name", String.class);
+            is = App.class.getClassLoader().getResourceAsStream("music_streaming_data.json");
+            String currentSong = JsonPath.parse(is).read("$.streamingSession.currentSong.title", String.class);
+            is = App.class.getClassLoader().getResourceAsStream("music_streaming_data.json");
+            String firstPlayed = JsonPath.parse(is).read("$.streamingSession.playedSongs[0]", String.class);
+            is = App.class.getClassLoader().getResourceAsStream("music_streaming_data.json");
+            Double price = JsonPath.parse(is).read("$.subscriptionPlan.price", Double.class);
+
+            System.out.println("Username: " + username);
+            System.out.println("First playlist: " + firstPlaylist);
+            System.out.println("Current song: " + currentSong);
+            System.out.println("First played song: " + firstPlayed);
+            System.out.println("Plan price: $" + price);
+        } catch (Exception e) {
+            System.err.println("JSONPath Error: " + e.getMessage());
             e.printStackTrace();
         }
     }

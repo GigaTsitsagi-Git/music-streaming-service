@@ -1,0 +1,37 @@
+{
+  "username": "john_doe",
+  "email": "john.doe@example.com",
+  "createdDate": "2024-01-15",
+  "createdDateTime": "2024-01-15T10:30:00",
+  "playlists": [
+    {
+      "name": "My Favorites",
+      "items": [
+        {
+          "position": 1,
+          "song": { "title": "Anti-Hero", "artist": { "name": "Taylor Swift" }, "album": { "title": "Midnights", "artist": { "name": "Taylor Swift" } } }
+        },
+        {
+          "position": 2,
+          "song": { "title": "Take My Breath", "artist": { "name": "The Weeknd" }, "album": { "title": "Dawn FM", "artist": { "name": "The Weeknd" } } }
+        }
+      ]
+    },
+    {
+      "name": "Workout Mix",
+      "items": [
+        {
+          "position": 1,
+          "song": { "title": "Gasoline", "artist": { "name": "The Weeknd" }, "album": { "title": "Dawn FM", "artist": { "name": "The Weeknd" } } }
+        }
+      ]
+    }
+  ],
+  "streamingSession": {
+    "currentSong": { "title": "Lavender Haze", "artist": { "name": "Taylor Swift" }, "album": { "title": "Midnights", "artist": { "name": "Taylor Swift" } } },
+    "playedSongs": ["Anti-Hero", "Take My Breath"]
+  },
+  "subscriptionPlan": { "name": "Premium", "price": 9.99 }
+}
+
+
