@@ -1,13 +1,17 @@
-package com.solvd.musicstreamingservice;
+package com.solvd.musicstreamingservice.parser;
+
+import com.solvd.musicstreamingservice.model.Playlist;
+import com.solvd.musicstreamingservice.model.PlaylistItem;
+import com.solvd.musicstreamingservice.model.User;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.InputStream;
 
 /**
- * 
+ *
  * This class provides methods to parse music streaming service data from XML format.
- * 
+ *
  * <p><b> XPath to find elements in XML:</b></p>
  * <ul>
  *   <li><code>/musicstreamingservice/user/username</code> - Selects the username element directly under the user element</li>
@@ -16,7 +20,7 @@ import java.io.InputStream;
  *   <li><code>/musicstreamingservice/user/playlist/playlistitem/song/title</code> - Selects all song titles in playlists</li>
  *   <li><code>//playedSong[position()=1]</code> - Selects the first played song from the streaming session</li>
  * </ul>
- * 
+ *
  */
 public class XMLSaxParser {
 

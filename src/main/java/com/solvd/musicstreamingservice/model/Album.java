@@ -1,14 +1,13 @@
-package com.solvd.musicstreamingservice;
+package com.solvd.musicstreamingservice.model;
 
-public class Song {
+public class Album {
+
     private String title;
     private Artist artist;
-    private Album album;
 
-    public Song(String title, Artist artist, Album album) {
+    public Album(String title, Artist artist) {
         this.title = title;
         this.artist = artist;
-        this.album = album;
     }
 
     public String getTitle() {
@@ -27,11 +26,4 @@ public class Song {
         this.artist = artist;
     }
 
-    public Album getAlbum() {
-        return album;
-    }
-
-    public void setAlbum(Album album) {
-        this.album = album;
-    }
 }

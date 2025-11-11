@@ -1,9 +1,10 @@
-package com.solvd.musicstreamingservice;
+package com.solvd.musicstreamingservice.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Playlist {
+
     private String name;
     private String ownerUsername;
     private List<PlaylistItem> songs;

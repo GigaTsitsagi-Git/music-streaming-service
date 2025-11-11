@@ -1,6 +1,7 @@
-package com.solvd.musicstreamingservice;
+package com.solvd.musicstreamingservice.model;
 
 public class PlaylistItem {
+
     private Song song;
     private String playlistName;
     private int position;

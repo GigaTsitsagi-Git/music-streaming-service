@@ -1,6 +1,7 @@
-package com.solvd.musicstreamingservice;
+package com.solvd.musicstreamingservice.parser;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.File;
 
 public class JsonParser {

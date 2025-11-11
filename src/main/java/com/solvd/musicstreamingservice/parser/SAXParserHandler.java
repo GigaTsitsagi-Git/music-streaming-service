@@ -1,5 +1,6 @@
-package com.solvd.musicstreamingservice;
+package com.solvd.musicstreamingservice.parser;
 
+import com.solvd.musicstreamingservice.model.*;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -17,11 +18,11 @@ public class SAXParserHandler extends DefaultHandler {
     private Song currentSong;
     private StreamingSession currentStreamingSession;
     private SubscriptionPlan currentSubscriptionPlan;
-    
+
     private String currentElement;
     private StringBuilder text;
     private List<String> playedSongTitles;
-    
+
     private User rootUser;
 
     @Override
@@ -91,7 +92,7 @@ public class SAXParserHandler extends DefaultHandler {
                     currentUser.setCreatedDateTime(LocalDateTime.parse(content));
                 }
                 break;
-                
+
             case "name":
                 if (currentSubscriptionPlan != null) {
                     currentSubscriptionPlan.setName(content);
@@ -105,7 +106,7 @@ public class SAXParserHandler extends DefaultHandler {
                     currentPlaylist = null;
                 }
                 break;
-                
+
             case "title":
                 if (currentSong != null) {
                     currentSong.setTitle(content);
@@ -125,7 +126,7 @@ public class SAXParserHandler extends DefaultHandler {
                     }
                 }
                 break;
-                
+
             case "position":
                 if (currentPlaylistItem != null) {
                     currentPlaylistItem.setPosition(Integer.parseInt(content));
@@ -146,7 +147,7 @@ public class SAXParserHandler extends DefaultHandler {
                 }
                 currentPlaylistItem = null;
                 break;
-                
+
             case "currentSong":
                 if (currentStreamingSession != null && currentSong != null) {
                     currentStreamingSession.setCurrentSong(currentSong);
@@ -171,7 +172,7 @@ public class SAXParserHandler extends DefaultHandler {
                 currentStreamingSession = null;
                 playedSongTitles = null;
                 break;
-                
+
             case "price":
                 if (currentSubscriptionPlan != null) {
                     currentSubscriptionPlan.setPrice(Double.parseDouble(content));
@@ -184,7 +185,7 @@ public class SAXParserHandler extends DefaultHandler {
                 currentSubscriptionPlan = null;
                 break;
         }
-        
+
         currentElement = null;
         text.setLength(0);
     }

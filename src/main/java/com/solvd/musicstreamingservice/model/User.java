@@ -1,4 +1,4 @@
-package com.solvd.musicstreamingservice;
+package com.solvd.musicstreamingservice.model;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User {
+
     private String username;
     private String email;
     private LocalDate createdDate;

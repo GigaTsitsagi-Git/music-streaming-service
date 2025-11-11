@@ -1,6 +1,7 @@
-package com.solvd.musicstreamingservice;
+package com.solvd.musicstreamingservice.model;
 
 public class Artist {
+
     private String name;
 
     public Artist(String name) {

@@ -1,17 +1,15 @@
-package com.solvd.musicstreamingservice;
+package com.solvd.musicstreamingservice.model;
 
-import java.util.ArrayList;
-import java.util.List;
+public class Song {
 
-public class Album {
     private String title;
     private Artist artist;
-    private List<Song> songs;
+    private Album album;
 
-    public Album(String title, Artist artist) {
+    public Song(String title, Artist artist, Album album) {
         this.title = title;
         this.artist = artist;
-        this.songs = new ArrayList<>();
+        this.album = album;
     }
 
     public String getTitle() {
@@ -30,11 +28,11 @@ public class Album {
         this.artist = artist;
     }
 
-    public List<Song> getSongs() {
-        return songs;
+    public Album getAlbum() {
+        return album;
     }
 
-    public void addSong(Song song) {
-        songs.add(song);
+    public void setAlbum(Album album) {
+        this.album = album;
     }
 }
